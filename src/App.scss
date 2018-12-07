@@ -30,36 +30,207 @@ body {
     height: 100%;
 
     .App {
-      width: 100%;
-      height: 100%;
-
-      background-color: $blue;
-      background-image: $blue-gradient;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-
-      * {
-        text-align: center;
-        color: $white;
-      }
-
-      .Content {
+      position: relative;
+      > svg {
+        position: relative;
         width: 100%;
-        height: 100%;
-
-        > h1 {
+        g#loop {
+          g#sun {
+            transform-origin: 95.5% 15.5%;
+            animation: sun 20s infinite linear;
+            @keyframes sun {
+              from {
+                transform: rotate(0deg);
+              }
+              to {
+                transform: rotate(-360deg);
+              }
+            }
+          }
+          > g#cloud {
+            animation: cloud 70s infinite linear;
+            @keyframes cloud {
+              from {
+                transform: matrix3d(
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1000,
+                  0,
+                  0,
+                  1
+                );
+              }
+              to {
+                transform: matrix3d(
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -2000,
+                  0,
+                  0,
+                  1
+                );
+              }
+            }
+          }
+          > g#mountains {
+            animation: mountains 100s infinite linear;
+            @keyframes mountains {
+              from {
+                transform: matrix3d(
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                );
+              }
+              to {
+                transform: matrix3d(
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -1400,
+                  0,
+                  0,
+                  1
+                );
+              }
+            }
+          }
+        }
+        g#plane {
+          animation: plane 4s infinite linear alternate;
+          @keyframes plane {
+            from {
+              transform: matrix3d(
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              );
+            }
+            to {
+              transform: matrix3d(
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                -10,
+                -10,
+                0,
+                1
+              );
+            }
+          }
+        }
+      }
+      .Countdown {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: $white;
+        .title {
           font-family: $font-head;
           font-weight: 700;
-          font-size: 5em;
-          padding: 10vh;
+          font-size: 5vw;
+          text-align: center;
         }
-
-        > p {
-          font-size: 2em;
-          padding: 10vh;
+        .Clock {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          .outer {
+            margin: 0 2px;
+            .inner {
+              background: $gray;
+              padding: 0.5vw 2vw;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              > div {
+                font-size: 4.5vw;
+              }
+            }
+            > div {
+              margin-top: 0.25vw;
+              font-size: 1vw;
+              text-transform: uppercase;
+              text-align: left;
+            }
+          }
+        }
+        .date {
+          font-family: $font-paragraph;
+          font-size: 1.25vw;
+          text-align: center;
+          margin-top: 2vh;
         }
       }
     }

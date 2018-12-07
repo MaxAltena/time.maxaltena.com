@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "./App.css";
-import Background from "./assets/Background";
-import Countdown from "./components/Countdown";
 
-class App extends Component {
+import Clock from "./Clock";
+
+class Countdown extends Component {
   constructor(props) {
     super(props);
     this.state = {
       name: props.name,
       deadline: props.deadline
     };
-    document.title = this.state.name + " | Max Altena";
   }
 
   componentWillReceiveProps = nextProps => {
@@ -24,17 +22,18 @@ class App extends Component {
   render() {
     const { name, deadline } = this.state;
     return (
-      <div className="App">
-        <Background />
-        <Countdown name={name} deadline={deadline} />
+      <div className="Countdown">
+        <div className="title">{name}</div>
+        <Clock deadline={deadline} />
+        <div className="date">Time until {deadline}</div>
       </div>
     );
   }
 }
 
-App.propTypes = {
-  name: PropTypes.string,
-  deadline: PropTypes.string
+Countdown.propTypes = {
+  name: PropTypes.string.isRequired,
+  deadline: PropTypes.string.isRequired
 };
 
-export default App;
+export default Countdown;
