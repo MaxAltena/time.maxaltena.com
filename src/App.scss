@@ -25,10 +25,14 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   overflow: hidden;
+  position: fixed;
 
   #root {
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow: hidden;
 
     .App {
       position: relative;
