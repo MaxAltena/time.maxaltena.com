@@ -26,6 +26,8 @@ class App extends Component {
     return (
       <div className="App">
         <Background />
+        {name.includes("Canada") ? <div className="Canada" /> : null}
+        {name.includes("Canada") ? <div className="Canada" /> : null}
         <Countdown name={name} deadline={deadline} />
       </div>
     );

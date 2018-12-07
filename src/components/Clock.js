@@ -62,7 +62,7 @@ class Clock extends Component {
         </div>
         <div className="outer">
           <div className="inner">
-            <div>{this.leading0(seconds)}</div>
+            <div className="colored">{this.leading0(seconds)}</div>
           </div>
           <div>seconds</div>
         </div>

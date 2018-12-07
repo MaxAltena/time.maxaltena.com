@@ -31,9 +31,12 @@ body {
 
     .App {
       position: relative;
+
       > svg {
         position: relative;
+        height: 100%;
         width: 100%;
+        display: block;
         g#loop {
           g#sun {
             transform-origin: 95.5% 15.5%;
@@ -93,7 +96,7 @@ body {
             }
           }
           > g#mountains {
-            animation: mountains 100s infinite linear;
+            animation: mountains 80s infinite linear;
             @keyframes mountains {
               from {
                 transform: matrix3d(
@@ -189,25 +192,29 @@ body {
         top: 0;
         bottom: 0;
         left: 0;
-        width: 100%;
+        right: 0;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         color: $white;
+        z-index: 2;
         .title {
           font-family: $font-head;
           font-weight: 700;
           font-size: 5vw;
           text-align: center;
+          color: $white;
+          background: transparent;
+          border: none;
+          outline: none;
         }
         .Clock {
           display: flex;
           justify-content: center;
-          width: 100%;
           .outer {
-            margin: 0 2px;
+            margin: 0 0.25vw;
             .inner {
               background: $gray;
               padding: 0.5vw 2vw;
@@ -216,6 +223,9 @@ body {
               align-items: center;
               > div {
                 font-size: 4.5vw;
+              }
+              .colored {
+                color: #f6b84d;
               }
             }
             > div {
@@ -227,10 +237,125 @@ body {
           }
         }
         .date {
+          width: 100%;
           font-family: $font-paragraph;
           font-size: 1.25vw;
           text-align: center;
           margin-top: 2vh;
+          color: $white;
+          background: transparent;
+          border: none;
+          outline: none;
+          > input {
+            width: 21vw;
+            text-align: left;
+          }
+        }
+      }
+      .Canada:nth-child(2) {
+        background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Flag_of_Canada.svg/1280px-Flag_of_Canada.svg.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 64px;
+        width: 128px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: canada1 30s infinite linear;
+        @keyframes canada1 {
+          from {
+            transform: matrix3d(
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3000,
+              500,
+              0,
+              1
+            );
+          }
+          to {
+            transform: matrix3d(
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              -3000,
+              -300,
+              0,
+              1
+            );
+          }
+        }
+      }
+      .Canada:nth-child(3) {
+        background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Flag_of_Canada.svg/1280px-Flag_of_Canada.svg.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 64px;
+        width: 128px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: canada2 34s infinite linear;
+        @keyframes canada2 {
+          from {
+            transform: matrix3d(
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              2000,
+              0,
+              0,
+              1
+            );
+          }
+          to {
+            transform: matrix3d(
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              -2000,
+              1000,
+              0,
+              1
+            );
+          }
         }
       }
     }

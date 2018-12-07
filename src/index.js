@@ -23,7 +23,7 @@ ReactDOM.render(
           <App
             {...props}
             name="My countdown"
-            deadline="21 February 2019 12:00:00 GMT+1"
+            deadline="31 December 2019 23:59:59 GMT+1"
           />
         )}
       />

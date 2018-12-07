@@ -19,13 +19,32 @@ class Countdown extends Component {
     });
   };
 
+  onChange = e => {
+    this.setState({ [e.target.name]: [e.target.value] });
+  };
+
   render() {
     const { name, deadline } = this.state;
     return (
       <div className="Countdown">
-        <div className="title">{name}</div>
+        <input
+          type="text"
+          name="name"
+          className="title"
+          value={name}
+          onChange={this.onChange}
+        />
         <Clock deadline={deadline} />
-        <div className="date">Time until {deadline}</div>
+        <div className="date">
+          Time until{" "}
+          <input
+            type="text"
+            name="deadline"
+            className="date"
+            value={deadline}
+            onChange={this.onChange}
+          />
+        </div>
       </div>
     );
   }
@@ -33,7 +52,7 @@ class Countdown extends Component {
 
 Countdown.propTypes = {
   name: PropTypes.string.isRequired,
-  deadline: PropTypes.string.isRequired
+  deadline: PropTypes.string
 };
 
 export default Countdown;
