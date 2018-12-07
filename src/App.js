@@ -7,17 +7,25 @@ import Countdown from "./components/Countdown";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: props.name,
-      deadline: props.deadline
+
+    this.name = props.name.replace(/-/g, " ");
+    this.deadline = props.deadline.replace(/-/g, " ");
+
+    this.name = this.state = {
+      name: this.name,
+      deadline: this.deadline
     };
+
     document.title = this.state.name + " | Max Altena";
   }
 
   componentWillReceiveProps = nextProps => {
+    this.name = nextProps.name.replace(/-/g, " ");
+    this.deadline = nextProps.deadline.replace(/-/g, " ");
+
     this.setState({
-      name: nextProps.name,
-      deadline: nextProps.deadline
+      name: this.name,
+      deadline: this.deadline
     });
   };
 
@@ -28,7 +36,7 @@ class App extends Component {
         <Background />
         {name.includes("Canada") ? <div className="Canada" /> : null}
         {name.includes("Canada") ? <div className="Canada" /> : null}
-        <Countdown name={name} deadline={deadline} />
+        <Countdown name={name} deadline={deadline} props={this.props} />
       </div>
     );
   }

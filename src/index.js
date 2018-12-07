@@ -8,12 +8,20 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route
+        exact
         path="/canada"
+        render={() => (
+          <Redirect to="/Canada-Trip/22-February-2019-12:00:00-GMT+1/" />
+        )}
+      />
+
+      <Route
+        path="/:name/:deadline"
         render={props => (
           <App
             {...props}
-            name="Canada Trip"
-            deadline="22 February 2019 12:00:00 GMT+1"
+            name={props.match.params.name}
+            deadline={props.match.params.deadline}
           />
         )}
       />
