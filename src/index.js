@@ -27,12 +27,8 @@ ReactDOM.render(
       />
       <Route
         path="/"
-        render={props => (
-          <App
-            {...props}
-            name="My countdown"
-            deadline="31 December 2019 23:59:59 GMT+1"
-          />
+        render={() => (
+          <Redirect to="/New-Years-Eve/31-December-2018-23:59:59-GMT+1/" />
         )}
       />
       <Route render={() => <Redirect to="/" />} />
