@@ -1,32 +1,79 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Hind:400,700|Open+Sans:400,700");
+
+$white: rgb(255, 255, 255);
+$white-hover: rgb(205, 205, 205);
+$black: rgb(0, 0, 0);
+$gray: rgba(0, 0, 0, 0.3);
+$orange: rgb(254, 205, 24);
+$blue: rgb(33, 90, 175);
+$light-blue: rgb(62, 189, 218);
+$blue-gradient: linear-gradient(to top right, $blue, $light-blue);
+
+$font-default: sans-serif;
+$font-paragraph: "Open Sans", sans-serif;
+$font-head: "Hind", "Open Sans", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $font-paragraph;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  #root {
+    width: 100%;
+    height: 100%;
 
-.App-link {
-  color: #61dafb;
-}
+    .App {
+      width: 100%;
+      height: 100%;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+      background-color: $blue;
+      background-image: $blue-gradient;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      * {
+        text-align: center;
+        color: $white;
+      }
+
+      .Content {
+        > h1 {
+          font-family: $font-head;
+          font-weight: 700;
+          font-size: 5em;
+          padding: 10vh;
+        }
+
+        > img {
+          width: 40vh;
+          height: 40vh;
+          animation: rotatingLogo 20s infinite linear;
+        }
+
+        @keyframes rotatingLogo {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        > p {
+          font-size: 2em;
+          padding: 10vh;
+        }
+      }
+    }
   }
 }
