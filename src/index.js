@@ -14,9 +14,8 @@ ReactDOM.render(
           <Redirect to="/Canada-Trip/22-February-2019-12:00:00-GMT+1/" />
         )}
       />
-
       <Route
-        path="/:name/:deadline"
+        path="/:name/:deadline/"
         render={props => (
           <App
             {...props}
@@ -28,7 +27,7 @@ ReactDOM.render(
       <Route
         path="/"
         render={() => (
-          <Redirect to="/New-Years-Eve/31-December-2018-23:59:59-GMT+1/" />
+          <Redirect to="/New-Years-Eve/1-January-2019-00:00:00-GMT+1/" />
         )}
       />
       <Route render={() => <Redirect to="/" />} />

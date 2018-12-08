@@ -11,6 +11,11 @@ class App extends Component {
     this.name = props.name.replace(/-/g, " ");
     this.deadline = props.deadline.replace(/-/g, " ");
 
+    const time = Date.parse(this.deadline) - Date.parse(new Date());
+    if (isNaN(time)) {
+      this.props.history.push("/");
+    }
+
     this.name = this.state = {
       name: this.name,
       deadline: this.deadline

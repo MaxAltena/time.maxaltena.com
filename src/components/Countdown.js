@@ -48,15 +48,15 @@ class Countdown extends Component {
       if (!isEmpty(deadline[0])) {
         deadline = deadline[0].replace(/\s+/g, "-");
       } else {
-        this.setState({ name: "31 December 2019 23:59:59 GMT+1" });
-        deadline = "31-December-2019-23:59:59-GMT+1";
+        this.setState({ deadline: "1 January 2019 00:00:00 GMT+1" });
+        deadline = "1-January-2019-00:00:00-GMT+1";
       }
     } else {
       if (!isEmpty(deadline)) {
         deadline = deadline.replace(/\s+/g, "-");
       } else {
-        this.setState({ deadline: "31 December 2019 23:59:59 GMT+1" });
-        deadline = "31-December-2019-23:59:59-GMT+1";
+        this.setState({ deadline: "1 January 2019 00:00:00 GMT+1" });
+        deadline = "1-January-2019-00:00:00-GMT+1";
       }
     }
 
