@@ -37,164 +37,180 @@ body {
     .App {
       position: relative;
 
-      > svg {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        display: block;
-        g#loop {
-          g#sun {
-            transform-origin: 95.5% 15.5%;
-            animation: sun 20s infinite linear;
-            @keyframes sun {
-              from {
-                transform: rotate(0deg);
-              }
-              to {
-                transform: rotate(-360deg);
-              }
-            }
-          }
-          > g#cloud {
-            animation: cloud 70s infinite linear;
-            @keyframes cloud {
-              from {
-                transform: matrix3d(
-                  1,
-                  0,
-                  0,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                  0,
-                  0,
-                  1,
-                  0,
-                  1000,
-                  0,
-                  0,
-                  1
-                );
-              }
-              to {
-                transform: matrix3d(
-                  1,
-                  0,
-                  0,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                  0,
-                  0,
-                  1,
-                  0,
-                  -2000,
-                  0,
-                  0,
-                  1
-                );
-              }
-            }
-          }
-          > g#mountains {
-            animation: mountains 80s infinite linear;
-            @keyframes mountains {
-              from {
-                transform: matrix3d(
-                  1,
-                  0,
-                  0,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                  0,
-                  0,
-                  1
-                );
-              }
-              to {
-                transform: matrix3d(
-                  1,
-                  0,
-                  0,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                  0,
-                  0,
-                  1,
-                  0,
-                  -1400,
-                  0,
-                  0,
-                  1
-                );
-              }
-            }
-          }
+      .linearBackground {
+        height: 100vh;
+        width: 100vw;
+        background-color: #4a90d8;
+        background-image: linear-gradient(to bottom, #4a90d8, #78cade 70%);
+        display: flex;
+        align-items: flex-end;
+
+        .plane {
+          position: absolute;
+          top: 0;
+          border: 2px solid black;
         }
-        g#plane {
-          animation: plane 4s infinite linear alternate;
-          @keyframes plane {
-            from {
-              transform: matrix3d(
-                1,
-                0,
-                0,
-                0,
-                0,
-                1,
-                0,
-                0,
-                0,
-                0,
-                1,
-                0,
-                0,
-                0,
-                0,
-                1
-              );
+
+        > svg {
+          position: relative;
+          // height: 100%;
+          width: 100%;
+          display: block;
+          g#loop {
+            g#sun {
+              transform-origin: 95.5% 15.5%;
+              animation: sun 20s infinite linear;
+              @keyframes sun {
+                from {
+                  transform: rotate(0deg);
+                }
+                to {
+                  transform: rotate(-360deg);
+                }
+              }
             }
-            to {
-              transform: matrix3d(
-                1,
-                0,
-                0,
-                0,
-                0,
-                1,
-                0,
-                0,
-                0,
-                0,
-                1,
-                0,
-                -10,
-                -10,
-                0,
-                1
-              );
+            > g#cloud {
+              animation: cloud 70s infinite linear;
+              @keyframes cloud {
+                from {
+                  transform: matrix3d(
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    1000,
+                    0,
+                    0,
+                    1
+                  );
+                }
+                to {
+                  transform: matrix3d(
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    -2000,
+                    0,
+                    0,
+                    1
+                  );
+                }
+              }
+            }
+            > g#mountains {
+              animation: mountains 80s infinite linear;
+              @keyframes mountains {
+                from {
+                  transform: matrix3d(
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                  );
+                }
+                to {
+                  transform: matrix3d(
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    -1400,
+                    0,
+                    0,
+                    1
+                  );
+                }
+              }
+            }
+          }
+          g#plane {
+            animation: plane 4s infinite linear alternate;
+            @keyframes plane {
+              from {
+                transform: matrix3d(
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                );
+              }
+              to {
+                transform: matrix3d(
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -10,
+                  -10,
+                  0,
+                  1
+                );
+              }
             }
           }
         }
       }
+
       .Countdown {
         position: absolute;
-        top: 0;
+        top: -50px;
         bottom: 0;
         left: 0;
         right: 0;

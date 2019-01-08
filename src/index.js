@@ -11,7 +11,7 @@ ReactDOM.render(
         exact
         path="/canada"
         render={() => (
-          <Redirect to="/Canada-Trip/22-February-2019-12:00:00-GMT+1/" />
+          <Redirect to="/Canada-Trip/22-February-2019-13:30:00-GMT+1/" />
         )}
       />
       <Route
@@ -27,7 +27,7 @@ ReactDOM.render(
       <Route
         path="/"
         render={() => (
-          <Redirect to="/New-Years-Eve/1-January-2019-00:00:00-GMT+1/" />
+          <Redirect to="/New-Years-Eve/1-January-2020-00:00:00-GMT+1/" />
         )}
       />
       <Route render={() => <Redirect to="/" />} />

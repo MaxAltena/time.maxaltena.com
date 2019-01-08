@@ -3,17 +3,6 @@ import React from "react";
 const Background = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 490">
-      <linearGradient
-        id="a"
-        x1="703.9"
-        x2="701.1"
-        y1="-2.3"
-        y2="501.2"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0" stopColor="#4A90D8" />
-        <stop offset=".7" stopColor="#78CADE" />
-      </linearGradient>
       <def>
         <g id="mountain">
           <path
