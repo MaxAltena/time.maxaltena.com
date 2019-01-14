@@ -41,128 +41,129 @@ body {
         height: 100vh;
         width: 100vw;
         background-color: #4a90d8;
-        background-image: linear-gradient(to bottom, #4a90d8, #78cade 70%);
+        background-image: linear-gradient(to bottom, #2f6ca8, #78cade 70%);
         display: flex;
         align-items: flex-end;
 
-        .plane {
+        .sun {
           position: absolute;
-          top: 0;
-          border: 2px solid black;
+          top: 5vh;
+          right: 5vh;
+          width: 106.3px;
+          height: 106.3px;
+          animation: sun 25s infinite linear;
+          @keyframes sun {
+            from {
+              transform: rotate(0deg) scale(1.2);
+            }
+            to {
+              transform: rotate(-360deg) scale(1.2);
+            }
+          }
         }
 
-        > svg {
+        .cloud {
+          position: absolute;
+          left: 100%;
+          width: 180.1px;
+          height: 82.3px;
+
+          &.cloud1 {
+            top: 15vh;
+            animation: cloud1 70s infinite linear;
+            @keyframes cloud1 {
+              from {
+                transform: translateX(500%);
+              }
+              to {
+                transform: translateX(-1000%);
+              }
+            }
+          }
+          &.cloud2 {
+            top: 23vh;
+            animation: cloud2 55s infinite linear;
+            @keyframes cloud2 {
+              from {
+                transform: translateX(500%);
+              }
+              to {
+                transform: translateX(-1000%);
+              }
+            }
+          }
+        }
+
+        .plane {
+          position: absolute;
+          top: calc(50% - (125px / 2));
+          left: 7.5vw;
+          width: 285px;
+          height: 125px;
+          animation: plane 5s infinite ease-in-out alternate;
+          @keyframes plane {
+            from {
+              transform: matrix3d(
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  10,
+                  10,
+                  0,
+                  1
+                )
+                scale(1.15);
+            }
+            to {
+              transform: matrix3d(
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -20,
+                  -30,
+                  0,
+                  1
+                )
+                scale(1.1);
+            }
+          }
+        }
+
+        .clouds {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 201px;
+          width: 100%;
+          transform: scaleY(1.6);
+        }
+
+        > svg.Background {
           position: relative;
           // height: 100%;
           width: 100%;
           display: block;
-          g#loop {
-            g#sun {
-              transform-origin: 95.5% 15.5%;
-              animation: sun 20s infinite linear;
-              @keyframes sun {
-                from {
-                  transform: rotate(0deg);
-                }
-                to {
-                  transform: rotate(-360deg);
-                }
-              }
-            }
-            > g#cloud {
-              animation: cloud 70s infinite linear;
-              @keyframes cloud {
-                from {
-                  transform: matrix3d(
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    0,
-                    1000,
-                    0,
-                    0,
-                    1
-                  );
-                }
-                to {
-                  transform: matrix3d(
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    0,
-                    -2000,
-                    0,
-                    0,
-                    1
-                  );
-                }
-              }
-            }
-            > g#mountains {
-              animation: mountains 80s infinite linear;
-              @keyframes mountains {
-                from {
-                  transform: matrix3d(
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1
-                  );
-                }
-                to {
-                  transform: matrix3d(
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    0,
-                    -1400,
-                    0,
-                    0,
-                    1
-                  );
-                }
-              }
-            }
-          }
-          g#plane {
-            animation: plane 4s infinite linear alternate;
-            @keyframes plane {
+          > g.loop > g.mountains {
+            animation: mountains 80s infinite linear;
+            @keyframes mountains {
               from {
                 transform: matrix3d(
                   1,
@@ -197,8 +198,8 @@ body {
                   0,
                   1,
                   0,
-                  -10,
-                  -10,
+                  -1400,
+                  0,
                   0,
                   1
                 );
@@ -246,7 +247,7 @@ body {
                 font-size: 4.5vw;
               }
               .colored {
-                color: #f6b84d;
+                color: #03a0de;
               }
             }
             > div {
@@ -273,109 +274,38 @@ body {
           }
         }
       }
-      .Canada:nth-child(2) {
+      .Canada {
         background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Flag_of_Canada.svg/1280px-Flag_of_Canada.svg.png);
         background-size: contain;
         background-repeat: no-repeat;
         height: 64px;
         width: 128px;
         position: absolute;
-        top: 0;
-        left: 0;
-        animation: canada1 30s infinite linear;
-        @keyframes canada1 {
-          from {
-            transform: matrix3d(
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              3000,
-              500,
-              0,
-              1
-            );
-          }
-          to {
-            transform: matrix3d(
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              -3000,
-              -300,
-              0,
-              1
-            );
+
+        &.Canada1 {
+          top: 30vh;
+          left: 150vw;
+          animation: canada1 35s infinite linear;
+          @keyframes canada1 {
+            from {
+              transform: translateX(0) translateY(-10vh);
+            }
+            to {
+              transform: translateX(-200vw) translateY(50vh);
+            }
           }
         }
-      }
-      .Canada:nth-child(3) {
-        background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Flag_of_Canada.svg/1280px-Flag_of_Canada.svg.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 64px;
-        width: 128px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        animation: canada2 34s infinite linear;
-        @keyframes canada2 {
-          from {
-            transform: matrix3d(
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              2000,
-              0,
-              0,
-              1
-            );
-          }
-          to {
-            transform: matrix3d(
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              -2000,
-              1000,
-              0,
-              1
-            );
+        &.Canada2 {
+          top: 40vh;
+          left: 150vw;
+          animation: canada2 30s infinite linear;
+          @keyframes canada2 {
+            from {
+              transform: translateX(0) translateY(40vh);
+            }
+            to {
+              transform: translateX(-200vw) translateY(-30vh);
+            }
           }
         }
       }
