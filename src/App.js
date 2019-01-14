@@ -38,7 +38,6 @@ class App extends Component {
     const { name, deadline } = this.state;
 
     let canadaElements;
-
     if (name.includes("Canada")) {
       canadaElements = (
         <div>
@@ -84,7 +83,6 @@ class App extends Component {
               d="M81.9,61.1c0-1.8,0.7-3.4,2-4.5c1-1.2,2.7-2,4.4-2h128.4c3.4,0,6.3,3,6.3,6.5c0,1.8-0.7,3.4-2,4.5c-1,1.2-2.7,2-4.4,2H88.2C84.7,67.6,81.8,64.6,81.9,61.1L81.9,61.1z M258.4,61.3h-13V48C252.6,48.2,258.4,54,258.4,61.3z"
             />
             <path fill="#F1F1F1" d="M44.4,48H7.7L0,33.3h30.7" />
-
             <path
               fill="#F1F1F1"
               d="M258.7,61.3h-13.3V47.8C252.8,48,258.8,54,258.7,61.3L258.7,61.3z"

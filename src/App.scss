@@ -73,22 +73,22 @@ body {
             animation: cloud1 70s infinite linear;
             @keyframes cloud1 {
               from {
-                transform: translateX(500%);
+                transform: translateX(200vw);
               }
               to {
-                transform: translateX(-1000%);
+                transform: translateX(-200vw);
               }
             }
           }
           &.cloud2 {
-            top: 23vh;
+            top: 24vh;
             animation: cloud2 55s infinite linear;
             @keyframes cloud2 {
               from {
-                transform: translateX(500%);
+                transform: translateX(200vw);
               }
               to {
-                transform: translateX(-1000%);
+                transform: translateX(-200vw);
               }
             }
           }
@@ -121,7 +121,7 @@ body {
                   0,
                   1
                 )
-                scale(1.15);
+                scale(1.35);
             }
             to {
               transform: matrix3d(
@@ -142,7 +142,7 @@ body {
                   0,
                   1
                 )
-                scale(1.1);
+                scale(1.4);
             }
           }
         }
@@ -274,6 +274,7 @@ body {
           }
         }
       }
+
       .Canada {
         background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Flag_of_Canada.svg/1280px-Flag_of_Canada.svg.png);
         background-size: contain;
@@ -285,7 +286,7 @@ body {
         &.Canada1 {
           top: 30vh;
           left: 150vw;
-          animation: canada1 35s infinite linear;
+          animation: canada1 50s infinite linear;
           @keyframes canada1 {
             from {
               transform: translateX(0) translateY(-10vh);
@@ -298,7 +299,7 @@ body {
         &.Canada2 {
           top: 40vh;
           left: 150vw;
-          animation: canada2 30s infinite linear;
+          animation: canada2 60s infinite linear;
           @keyframes canada2 {
             from {
               transform: translateX(0) translateY(40vh);
