@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./App.css";
-import Background from "./assets/Background";
+import Mountains from "./assets/Mountains";
+import Clouds from "./assets/Clouds";
 import Countdown from "./components/Countdown";
 
 class App extends Component {
@@ -103,13 +104,8 @@ class App extends Component {
               d="M269.7,61.3h-24.3V48h-73l-45-48H93.9l34,48H7.7l6.5,12.2l-13,26.2h14.5l11-11.8h103L120.3,88l-26.2,37h33.6l34.6-37l12.5-13.4h108.4C283.2,67.3,277.2,61.3,269.7,61.3L269.7,61.3z M83.7,56.5c1.3-1.2,3-2,4.6-2h128.4c3.4,0,6.3,3,6.3,6.5c0,1.8-0.7,3.4-2,4.5c-1,1.2-2.7,2-4.4,2H88.2c-3.5,0-6.4-3-6.4-6.5c0-1.7,0.7-3.3,2-4.5H83.7z"
             />
           </svg>
-          <svg className="clouds">
-            <path
-              fill="#84CEE1"
-              d="M1403.4,96.6V201H-1V96l1-1l7-6c48.8-39.5,115.4-64,188.7-64c68.3,0,130.8,21.2,178.4,56c14,10.4,27,21.8,38,34.3c15.2-4,31.2-6,47.6-6c37,0,71.5,10.7,100,29.3c31-18.6,68-29.4,108-29.4c28,0,54.4,5.3,78.3,14.7c30-48.4,83-80.4,143.3-80.4c36,0,69,11.3,96.5,30.6C1038,28,1107.2,0,1183,0C1271,0,1349.6,37.3,1403.4,96.6z"
-            />
-          </svg>
-          <Background />
+          <Clouds />
+          <Mountains />
         </div>
         {canadaElements}
         <Countdown name={name} deadline={deadline} props={this.props} />

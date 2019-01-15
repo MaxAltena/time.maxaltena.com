@@ -147,23 +147,69 @@ body {
           }
         }
 
-        .clouds {
+        > svg.Mountains {
           position: absolute;
           bottom: 0;
           left: 0;
-          height: 201px;
-          width: 100%;
-          transform: scaleY(1.6);
-        }
-
-        > svg.Background {
-          position: relative;
-          // height: 100%;
           width: 100%;
           display: block;
           > g.loop > g.mountains {
             animation: mountains 80s infinite linear;
             @keyframes mountains {
+              from {
+                transform: matrix3d(
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                );
+              }
+              to {
+                transform: matrix3d(
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -1400,
+                  0,
+                  0,
+                  1
+                );
+              }
+            }
+          }
+        }
+        > svg.Clouds {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          transform: scaleY(1.7);
+
+          display: block;
+          > g.loop > g.clouds {
+            animation: clouds 120s infinite linear;
+            @keyframes clouds {
               from {
                 transform: matrix3d(
                   1,
@@ -245,9 +291,6 @@ body {
               align-items: center;
               > div {
                 font-size: 4.5vw;
-              }
-              .colored {
-                color: #03a0de;
               }
             }
             > div {
