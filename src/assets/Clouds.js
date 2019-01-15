@@ -2,7 +2,11 @@ import React from "react";
 
 const Clouds = () => {
   return (
-    <svg className="Clouds">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1400 201"
+      className="Clouds"
+    >
       <def>
         <g id="cloud">
           <path
