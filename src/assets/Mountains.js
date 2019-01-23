@@ -22,7 +22,7 @@ const Mountains = () => {
       <g className="loop">
         <g className="mountains" data-svg-origin="0 332.89996337890625">
           <use xlinkHref="#mountain" />
-          <use xlinkHref="#mountain" x="1400" />
+          <use xlinkHref="#mountain" x="1399.8" />
         </g>
       </g>
     </svg>
