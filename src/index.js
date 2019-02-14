@@ -15,6 +15,13 @@ ReactDOM.render(
         )}
       />
       <Route
+        exact
+        path="/canada-pvt"
+        render={() => (
+          <Redirect to="/Canada-Trip-PvT/22-February-2019-13:30:00-GMT+1/" />
+        )}
+      />
+      <Route
         path="/:name/:deadline/"
         render={props => (
           <App
