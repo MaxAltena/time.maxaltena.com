@@ -11,14 +11,14 @@ ReactDOM.render(
         exact
         path="/canada"
         render={() => (
-          <Redirect to="/Canada-Trip/22-February-2019-13:30:00-GMT+1/" />
+          <Redirect to="/Canada-Trip-2.0/22-February-2020-13:30:00-GMT+1/" />
         )}
       />
       <Route
         exact
         path="/canada-pvt"
         render={() => (
-          <Redirect to="/Canada-Trip-PvT/22-February-2019-13:30:00-GMT+1/" />
+          <Redirect to="/Canada-Trip-2.0-PvT/22-February-2020-13:30:00-GMT+1/" />
         )}
       />
       <Route
